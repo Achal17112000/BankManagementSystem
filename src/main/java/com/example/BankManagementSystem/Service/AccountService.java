@@ -3,12 +3,13 @@ package com.example.BankManagementSystem.Service;
 import com.example.BankManagementSystem.bean.Account;
 import com.example.BankManagementSystem.repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Service
+@Component
 public class AccountService {
 
     @Autowired(required = false)

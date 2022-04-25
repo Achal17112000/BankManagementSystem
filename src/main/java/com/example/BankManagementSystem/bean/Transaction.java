@@ -1,9 +1,12 @@
 package com.example.BankManagementSystem.bean;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.Date;
 
 @Entity
 @Table(name = "Transaction")
@@ -12,8 +15,9 @@ public class Transaction {
     @Id
     @GeneratedValue
     int transId;
-    double depositAmt;
-    double withdrawalAmt;
+    double balance;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+    Date transDate;
 
     public int getTransId() {
         return transId;
@@ -23,19 +27,19 @@ public class Transaction {
         this.transId = transId;
     }
 
-    public double getDepositAmt() {
-        return depositAmt;
+    public double getBalance() {
+        return balance;
     }
 
-    public void setDepositAmt(double depositAmt) {
-        this.depositAmt = depositAmt;
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 
-    public double getWithdrawalAmt() {
-        return withdrawalAmt;
+    public Date getTransDate() {
+        return transDate;
     }
 
-    public void setWithdrawalAmt(double withdrawalAmt) {
-        this.withdrawalAmt = withdrawalAmt;
+    public void setTransDate(Date transDate) {
+        this.transDate = transDate;
     }
 }
